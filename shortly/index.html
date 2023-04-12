@@ -16,18 +16,18 @@
   </head>
   <body>
     <header>
-      <div class="container relative mx-auto flex items-center gap-10 p-6">
-        <a href="" class="font text-4xl font-bold text-veryDarkBlue">Shortly</a>
+      <div class="container relative mx-auto flex items-center gap-20 p-6">
+        <a href=""><img src="images/logo.svg" alt="" /></a>
         <nav class="hidden lg:block">
-          <ul class="text-md flex flex-row gap-6 font-bold text-grayishViolet">
+          <ul class="text-md flex flex-row gap-8 font-bold text-grayishViolet">
             <li class="hover:text-veryDarkViolet">Features</li>
             <li class="hover:text-veryDarkViolet">Pricing</li>
             <li class="hover:text-veryDarkViolet">Resources</li>
           </ul>
         </nav>
         <div class="text-md ml-auto hidden font-bold lg:block">
-          <a href="" class="mr-2 text-grayishViolet hover:text-veryDarkViolet">Login</a>
-          <button class="rounded-full bg-cyan px-6 py-2 text-white">Sign Up</button>
+          <a href="" class="mr-5 text-grayishViolet hover:text-veryDarkViolet">Login</a>
+          <button class="rounded-full bg-cyan px-8 py-3 text-white">Sign Up</button>
         </div>
 
         <!-- Hamburger Button -->
@@ -64,8 +64,28 @@
       </div>
     </header>
     <main>
-      <section class="hero">
-        <div></div>
+      <section class="container mx-auto flex flex-col p-6 lg:flex-row">
+        <div class="justify-right order-2 flex flex-col gap-4 self-center lg:order-1 lg:w-1/2">
+          <h1
+            class="mt-24 text-center text-5xl font-bold lg:mt-16 lg:max-w-md lg:text-left lg:text-6xl"
+          >
+            More than just shorter links
+          </h1>
+          <p class="mt-6 text-center text-2xl text-grayishViolet lg:max-w-md lg:text-left">
+            Build your brand's recognition and get detailed insights on how your links are
+            performing.
+          </p>
+          <button
+            class="self-center rounded-full bg-cyan px-10 py-5 text-center text-2xl font-bold text-white lg:self-start lg:py-4"
+          >
+            Get Started
+          </button>
+        </div>
+        <img
+          src="images/illustration-working.svg"
+          alt=""
+          class="order-1 w-180 self-center lg:order-2 lg:w-1/2 lg:self-start"
+        />
       </section>
     </main>
     <script src="js/script.js"></script>

@@ -89,7 +89,11 @@
       </section>
       <section class="bg-gray-100">
         <div class="relative top-[-70px] mx-auto flex max-w-4xl flex-col gap-6 px-6">
-          <form action="" class="flex flex-col gap-3 rounded-lg bg-darkViolet p-10 md:flex-row">
+          <form
+            action=""
+            class="flex flex-col gap-3 rounded-lg bg-darkViolet p-10 md:flex-row"
+            style="background-image: url(./images/bg-shorten-desktop.svg)"
+          >
             <input
               type="url"
               placeholder="Shorten a link here"
@@ -123,7 +127,7 @@
           </div>
         </div>
       </section>
-      <section class="bg-gray-100">
+      <section class="bg-gray-100 pb-24">
         <div class="flex flex-col items-center gap-6 pb-20 pt-10 md:pb-0">
           <h1 class="text-4xl font-bold">Advance Statistics</h1>
           <p class="max-w-xs text-center text-grayishViolet md:max-w-md">
@@ -181,7 +185,59 @@
           </div>
         </div>
       </section>
+      <section
+        class="bg-darkViolet bg-contain bg-cover"
+        style="background-image: url(./images/bg-boost-desktop.svg)"
+      >
+        <div class="flex flex-col items-center justify-center gap-4 py-24 text-white">
+          <h1 class="text-4xl font-bold tracking-wide">Boost your links today</h1>
+          <button class="rounded-full bg-cyan px-8 py-3">Get Started</button>
+        </div>
+      </section>
     </main>
+
+    <footer class="bg-veryDarkViolet">
+      <div class="container mx-auto flex justify-center p-6 py-16 md:flex-row md:justify-between">
+        <a href=""><img src="images/logo.svg" alt="" /></a>
+        <div class="flex flex-row gap-24">
+          <div class="max-w-xs">
+            <h4 class="mb-6 font-bold text-white">Features</h4>
+            <ul class="flex flex-col gap-2 text-grayishViolet">
+              <li class="hover:text-cyan">Link Shortening</li>
+              <li class="hover:text-cyan">Branded Links</li>
+              <li class="hover:text-cyan">Analytics</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="mb-6 font-bold text-white">Resources</h4>
+            <ul class="flex flex-col gap-2 text-grayishViolet">
+              <li class="hover:text-cyan">Blog</li>
+              <li class="hover:text-cyan">Developer</li>
+              <li class="hover:text-cyan">Support</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="mb-6 font-bold text-white">Company</h4>
+
+            <ul class="flex flex-col gap-2 text-grayishViolet">
+              <li class="hover:text-cyan">About</li>
+              <li class="hover:text-cyan">Our Team</li>
+              <li class="hover:text-cyan">Careers</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-4 md:flex-row md:items-start">
+          <a href="" class="hover:fill-cyan">
+            <img src="images/icon-facebook.svg" alt="" />
+          </a>
+          <a href="" class="hover:fill-cyan"><img src="images/icon-twitter.svg" alt="" /></a>
+          <a href="" class="hover:fill-cyan"><img src="images/icon-pinterest.svg" alt="" /></a>
+          <a href="" class="hover:fill-cyan"><img src="images/icon-instagram.svg" alt="" /></a>
+        </div>
+      </div>
+    </footer>
     <script src="js/script.js"></script>
   </body>
 </html>

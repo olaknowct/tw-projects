@@ -1444,6 +1444,18 @@ video {
     gap: 2rem;
   }
 
+  .md\:gap-24 {
+    gap: 6rem;
+  }
+
+  .md\:gap-9 {
+    gap: 2.25rem;
+  }
+
+  .md\:gap-0 {
+    gap: 0px;
+  }
+
   .md\:self-start {
     align-self: flex-start;
   }
@@ -1454,6 +1466,14 @@ video {
 
   .md\:pb-10 {
     padding-bottom: 2.5rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+
+  .md\:text-right {
+    text-align: right;
   }
 }
 

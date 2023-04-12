@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>Document</title>
+    <title>Shortly</title>
   </head>
   <body>
     <header>
@@ -30,18 +30,32 @@
           <button class="rounded-full bg-cyan px-6 py-2 text-white">Sign Up</button>
         </div>
 
+        <!-- Hamburger Button -->
+        <div class="ml-auto lg:hidden">
+          <button
+            id="menu-btn"
+            type="button"
+            class="hamburger z-40 block focus:outline-none lg:hidden"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+
         <div
-          class="text-md container absolute left-0 top-[5rem] p-4 text-center font-bold text-white lg:hidden"
+          id="menu"
+          class="text-md container absolute left-0 top-[5rem] hidden p-4 text-center font-bold text-white"
         >
-          <div class="rounded-sm bg-darkViolet">
+          <div class="rounded-lg bg-darkViolet p-6">
             <nav class="">
-              <ul class="flex flex-col gap-4">
+              <ul class="flex flex-col gap-6 pb-3">
                 <li>Features</li>
                 <li>Pricing</li>
                 <li>Resources</li>
               </ul>
             </nav>
-            <div class="mt-4 flex flex-col gap-4 border-t pt-4">
+            <div class="mt-4 flex flex-col gap-6 border-t pt-6">
               <a href="">Login</a>
               <button class="rounded-full bg-cyan py-2">Sign Up</button>
             </div>
@@ -54,5 +68,6 @@
         <div></div>
       </section>
     </main>
+    <script src="js/script.js"></script>
   </body>
 </html>

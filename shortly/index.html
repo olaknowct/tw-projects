@@ -4,7 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="container relative mx-auto flex items-center gap-10 p-6">
+        <a href="" class="font text-4xl font-bold text-veryDarkBlue">Shortly</a>
+        <nav class="hidden lg:block">
+          <ul class="text-md flex flex-row gap-6 font-bold text-grayishViolet">
+            <li class="hover:text-veryDarkViolet">Features</li>
+            <li class="hover:text-veryDarkViolet">Pricing</li>
+            <li class="hover:text-veryDarkViolet">Resources</li>
+          </ul>
+        </nav>
+        <div class="text-md ml-auto hidden font-bold lg:block">
+          <a href="" class="mr-2 text-grayishViolet hover:text-veryDarkViolet">Login</a>
+          <button class="rounded-full bg-cyan px-6 py-2 text-white">Sign Up</button>
+        </div>
+
+        <div
+          class="text-md container absolute left-0 top-[5rem] p-4 text-center font-bold text-white lg:hidden"
+        >
+          <div class="rounded-sm bg-darkViolet">
+            <nav class="">
+              <ul class="flex flex-col gap-4">
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>Resources</li>
+              </ul>
+            </nav>
+            <div class="mt-4 flex flex-col gap-4 border-t pt-4">
+              <a href="">Login</a>
+              <button class="rounded-full bg-cyan py-2">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div></div>
+      </section>
+    </main>
+  </body>
 </html>

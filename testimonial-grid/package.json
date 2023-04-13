@@ -1,5 +1,5 @@
 {
-  "name": "loopstudios",
+  "name": "testimonial-grid",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,5 +13,8 @@
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "tailwindcss": "^3.3.1"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4"
   }
 }

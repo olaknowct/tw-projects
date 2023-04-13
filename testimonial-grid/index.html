@@ -1,115 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Alata&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>Testimonial Grid</title>
-</head>
-<body class="bg-gray-200">
-  <main>
-    <section>
-      <div class=" grid grid-rows-2 grid-cols-4 grid container mx-auto p-10 gap-6 max-w-7xl">
-        <div class="relative col-span-2 bg-purple-700 p-10 text-white z-0 flex flex-col gap-6 rounded-xl">
-          <img src="images/bg-pattern-quotation.svg" alt="" class="absolute scale-150 top-7 right-24 -z-10">
-          <figure class="flex flex-row gap-4">
-            <img src="images/image-daniel.jpg" alt="" class="w-10 h-10 rounded-full ring-2 ring-purple-300 ">
-            <figcaption class="text-sm">
-              <p>Daniel Clifford</p>
-              <p class="opacity-50">Verified Graduate</p>
-            </figcaption>
-          </figure>
-          <p class="text-xl ">I received a job offer mid-course, and the subjects I learned were current, if not more so, in the company I joined. I honestly feel I got every penny's worth.</p>
-          <p class="opacity-50 line-clamp-6">
-            "I was an EMT for many years before I joined the bootcamp. I've been looking to make a
-            transition and have heard some people who had an amazing experience here. I signed up
-            for the free intro course and found it incredibly fun! I enrolled shortly thereafter.
-            The next 12 weeks was the best - and most grueling - time of my life. Since completing
-            the course, I've successfully switched careers, working as a Software Engineer at a VR
-            startup. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione vero
-            repudiandae, quasi atque officiis eum consectetur odio amet dolorem deleniti repellat
-            expedita aut sunt laudantium cum itaque nam voluptatum quod! Quo totam sequi omnis
-            deserunt? Sit nam molestiae excepturi, perspiciatis labore deleniti eum, eligendi
-            quisquam quod sed nobis exercitationem tempora! "
-          </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Testimonial Grid</title>
+  </head>
+  <body class="bg-gray-200">
+    <main>
+      <section>
+        <div
+          class="container mx-auto grid grid max-w-7xl gap-6 p-10 lg:grid-cols-3 lg:grid-rows-3 xl:grid-cols-4 xl:grid-rows-2"
+        >
+          <div
+            class="relative z-0 flex flex-col gap-6 rounded-xl bg-purple-700 p-10 text-white lg:order-2 lg:col-span-2 xl:order-1 xl:col-span-2"
+          >
+            <img
+              src="images/bg-pattern-quotation.svg"
+              alt=""
+              class="absolute right-24 top-7 -z-10 scale-150"
+            />
+            <figure class="flex flex-row gap-4">
+              <img
+                src="images/image-daniel.jpg"
+                alt=""
+                class="h-10 w-10 rounded-full ring-2 ring-purple-300"
+              />
+              <figcaption class="text-sm">
+                <p>Daniel Clifford</p>
+                <p class="opacity-50">Verified Graduate</p>
+              </figcaption>
+            </figure>
+            <p class="text-xl">
+              I received a job offer mid-course, and the subjects I learned were current, if not
+              more so, in the company I joined. I honestly feel I got every penny's worth.
+            </p>
+            <p class="line-clamp-5 opacity-50 xl:line-clamp-6">
+              "I was an EMT for many years before I joined the bootcamp. I've been looking to make a
+              transition and have heard some people who had an amazing experience here. I signed up
+              for the free intro course and found it incredibly fun! I enrolled shortly thereafter.
+              The next 12 weeks was the best - and most grueling - time of my life. Since completing
+              the course, I've successfully switched careers, working as a Software Engineer at a VR
+              startup. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione vero
+              repudiandae, quasi atque officiis eum consectetur odio amet dolorem deleniti repellat
+              expedita aut sunt laudantium cum itaque nam voluptatum quod! Quo totam sequi omnis
+              deserunt? Sit nam molestiae excepturi, perspiciatis labore deleniti eum, eligendi
+              quisquam quod sed nobis exercitationem tempora! "
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-6 rounded-xl bg-gray-600 p-10 text-white lg:order-3 xl:order-2"
+          >
+            <figure class="flex flex-row gap-4">
+              <img
+                src="images/image-jonathan.jpg"
+                alt=""
+                class="h-10 w-10 rounded-full ring-2 ring-purple-300"
+              />
+              <figcaption class="text-sm">
+                <p>Jonathan Walters</p>
+                <p class="opacity-50">Verified Graduate</p>
+              </figcaption>
+            </figure>
+            <p class="text-xl">The team was very supportive and kept me motivated</p>
+            <p class="line-clamp-5 opacity-50">
+              "I started as a total newbie with virtually no coding skills. I now work as a mobile
+              engineer for a big company. This was one of the best investments I've made in myself.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam veritatis natus
+              illum ullam ab, nesciunt rerum nobis, quibusdam ad voluptatum rem necessitatibus
+              facere nihil deleniti assumenda vel velit neque quia, nisi ipsum laudantium impedit
+              eveniet iste. Pariatur, exercitationem consequuntur praesentium a est eum velit quos
+              maiores ipsum facere tempora! "
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-6 rounded-xl bg-white p-10 text-black lg:order-2 lg:col-span-3 xl:order-3 xl:col-span-1 xl:row-span-2"
+          >
+            <figure class="flex flex-row gap-4">
+              <img
+                src="images/image-kira.jpg"
+                alt=""
+                class="h-10 w-10 rounded-full ring-2 ring-purple-300"
+              />
+              <figcaption class="text-sm">
+                <p>Kira Whittle</p>
+                <p class="opacity-50">Verified Graduate</p>
+              </figcaption>
+            </figure>
+            <p class="text-xl">Such a life-changing experience. Highly recommended!</p>
+            <p class="opacity-50">
+              "Before joining the bootcamp, I've never written a line of code. I needed some
+              structure from professionals who can help me learn programming step by step. I was
+              encouraged to enroll by a former student of theirs who can only say wonderful things
+              about the program. The entire curriculum and staff did not disappoint. They were very
+              hands-on and I never had to wait long for assistance. The agile team project, in
+              particular, was outstanding. It took my learning to the next level in a way that no
+              tutorial could ever have. In fact, I've often referred to it during interviews as an
+              example of my developent experience. It certainly helped me land a job as a full-stack
+              developer after receiving multiple offers. 100% recommend!"
+            </p>
+          </div>
+          <div
+            class="row-span-1 flex flex-col gap-6 rounded-xl bg-white p-10 text-black lg:order-1 xl:order-4"
+          >
+            <figure class="flex flex-row gap-4">
+              <img
+                src="images/image-jeanette.jpg"
+                alt=""
+                class="h-10 w-10 rounded-full ring-2 ring-purple-300"
+              />
+              <figcaption class="text-sm">
+                <p>Jeanette Harmon</p>
+                <p class="opacity-50">Verified Graduate</p>
+              </figcaption>
+            </figure>
+            <p class="text-xl">An overall wonderful and rewarding experience</p>
+            <p class="opacity-50">
+              "Thank you for the wonderful experience! I now have a job I really enjoy, and make a
+              good living while doing something I love."
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-6 rounded-xl bg-gray-900 p-10 text-white lg:order-4 lg:col-span-2 xl:order-5 xl:col-span-2"
+          >
+            <figure class="flex flex-row gap-4">
+              <img
+                src="images/image-patrick.jpg"
+                alt=""
+                class="h-10 w-10 rounded-full ring-2 ring-purple-300"
+              />
+              <figcaption class="text-sm">
+                <p>Patrick Abrams</p>
+                <p class="opacity-50">Verified Graduate</p>
+              </figcaption>
+            </figure>
+            <p class="text-xl">
+              Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance
+              from them and learning from their experiences was easy.
+            </p>
+            <p class="opacity-50">
+              "The staff seem genuinely concerned about my progress which I find really refreshing.
+              The program gave me the confidence necessary to be able to go out in the world and
+              present myself as a capable junior developer. The standard is above the rest. You will
+              get the personal attention you need from an incredible community of smart and amazing
+              people."
+            </p>
+          </div>
         </div>
-        <div class="bg-gray-600  text-white  p-10 gap-6 rounded-xl flex flex-col ">
-          <figure class="flex flex-row gap-4">
-            <img src="images/image-jonathan.jpg" alt="" class="w-10 h-10 rounded-full ring-2 ring-purple-300 ">
-            <figcaption class="text-sm">
-              <p>Jonathan Walters</p>
-              <p class="opacity-50">Verified Graduate</p>
-            </figcaption>
-          </figure>
-          <p class="text-xl">The team was very supportive and kept me motivated</p>
-          <p class="opacity-50 line-clamp-6">
-            "I started as a total newbie with virtually no coding skills. I now work as a mobile
-            engineer for a big company. This was one of the best investments I've made in myself.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam veritatis natus
-            illum ullam ab, nesciunt rerum nobis, quibusdam ad voluptatum rem necessitatibus facere
-            nihil deleniti assumenda vel velit neque quia, nisi ipsum laudantium impedit eveniet
-            iste. Pariatur, exercitationem consequuntur praesentium a est eum velit quos maiores
-            ipsum facere tempora! "
-          </p>
-        </div>
-        <div class="row-span-2 bg-white text-black  p-10 gap-6 rounded-xl flex flex-col">
-          <figure class="flex flex-row gap-4">
-            <img src="images/image-kira.jpg" alt="" class="w-10 h-10 rounded-full ring-2 ring-purple-300 ">
-            <figcaption class="text-sm">
-              <p>Kira Whittle</p>
-              <p class="opacity-50">Verified Graduate</p>
-            </figcaption>
-          </figure>
-          <p class="text-xl">Such a life-changing experience. Highly recommended!</p>
-          <p class="opacity-50 ">
-            "Before joining the bootcamp, I've never written a line of code. I needed some structure
-            from professionals who can help me learn programming step by step. I was encouraged to
-            enroll by a former student of theirs who can only say wonderful things about the
-            program. The entire curriculum and staff did not disappoint. They were very hands-on and
-            I never had to wait long for assistance. The agile team project, in particular, was
-            outstanding. It took my learning to the next level in a way that no tutorial could ever
-            have. In fact, I've often referred to it during interviews as an example of my
-            developent experience. It certainly helped me land a job as a full-stack developer after
-            receiving multiple offers. 100% recommend!"
-          </p>
-        </div>
-        <div class="row-span-1 bg-white text-black  p-10 gap-6 rounded-xl flex flex-col">
-          <figure class="flex flex-row gap-4">
-            <img src="images/image-jeanette.jpg" alt="" class="w-10 h-10 rounded-full ring-2 ring-purple-300 ">
-            <figcaption class="text-sm">
-              <p>Jeanette Harmon</p>
-              <p class="opacity-50">Verified Graduate</p>
-            </figcaption>
-          </figure>
-          <p class="text-xl">An overall wonderful and rewarding experience</p>
-          <p class="opacity-50 ">
-            "Thank you for the wonderful experience! I now have a job I really enjoy, and make a
-            good living while doing something I love."
-          </p>
-        </div>
-        <div class="col-span-2 bg-gray-900 text-white  p-10 gap-6 rounded-xl flex flex-col">   
-          <figure class="flex flex-row gap-4">
-          <img src="images/image-patrick.jpg" alt="" class="w-10 h-10 rounded-full ring-2 ring-purple-300 ">
-          <figcaption class="text-sm">
-            <p>Patrick Abrams</p>
-            <p class="opacity-50">Verified Graduate</p>
-          </figcaption>
-          </figure>
-          <p class="text-xl">Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and learning from their experiences was easy.</p>
-          <p class="opacity-50 ">
-            "The staff seem genuinely concerned about my progress which I find really refreshing. The program gave me the confidence necessary to be able to go out in the world and present myself as a capable junior developer. The standard is above the rest. You will get the personal attention you need from an incredible community of smart and amazing people."
-          </p></div>
-      </div>
-
-    </section>
-  </main>
-  
-</body>
+      </section>
+    </main>
+  </body>
 </html>

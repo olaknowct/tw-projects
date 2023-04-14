@@ -35,6 +35,8 @@ const shortenLinkHandler = async (e) => {
     DOM.errMsg.innerHTML = '';
     DOM.loadSpinner.classList.remove('hidden');
 
+    DOM.shortenButton.setAttribute('disabled', '');
+
     // check and remove error styles
     formShortenInputClass.contains('placeholder-red', 'border-2', 'border-red')
       ? formShortenInputClass.remove('placeholder-red', 'border-2', 'border-red')
@@ -49,6 +51,7 @@ const shortenLinkHandler = async (e) => {
     createShortenLinkEl(res.result.full_short_link, link);
 
     DOM.loadSpinner.classList.add('hidden');
+    DOM.shortenButton.removeAttribute('disabled');
   } catch (e) {
     DOM.errMsg.innerHTML = e.message;
     DOM.loadSpinner.classList.add('hidden');

@@ -1,30 +1,10 @@
 'use strict';
-import { createUrlEndpoint } from './helpers.js';
+import { createUrlEndpoint, getShortlink, removeBurgerNav } from './helpers.js';
 import { DOM } from './dom.js';
 
 let vwidth;
 
-function navToggle() {
-  DOM.btn.classList.toggle('open');
-  DOM.menu.classList.toggle('block');
-  DOM.menu.classList.toggle('hidden');
-}
-
-function calcBrowserWith() {
-  vwidth = window.innerWidth;
-  if (vwidth > '1024') removeBurgerNav();
-}
-
-const removeBurgerNav = () => {
-  DOM.btn.classList.remove('open');
-  DOM.menu.classList.remove('block');
-  DOM.menu.classList.add('hidden');
-};
-
-// window.onload = calcBrowserWith;
-window.onresize = calcBrowserWith;
-DOM.btn.addEventListener('click', navToggle);
-
+// Validation
 const isValidHttpUrl = (string) => {
   let url;
   try {
@@ -38,42 +18,41 @@ const isValidHttpUrl = (string) => {
 
 const validateLinkInput = (link) => {
   if (link === '') {
-    DOM.errMsg.innerHTML = 'Please enter something';
-    DOM.formShortenInput.classList.add('border-red');
-    return;
+    throw Error('Please enter something');
   }
 
   if (!isValidHttpUrl(link)) {
-    errMsg.innerHTML = 'Not a valid Link';
-    formShortenInput.classList.add('border-red');
-    return;
+    throw Error('Not a valid link!');
   }
 };
 
-const shortenLinkHandler = (e) => {
-  e.preventDefault();
-  const link = DOM.formShortenInput.value;
-  DOM.errMsg.innerHTML = '';
+// Handler
+const shortenLinkHandler =  (e) => {
+  try {
+    e.preventDefault();
+    DOM.errMsg.innerHTML = '';
 
-  validateLinkInput(link);
+    validateLinkInput(DOM.formShortenInput.value);
 
-  const url = createUrlEndpoint(link);
+    const url = createUrlEndpoint(DOM.formShortenInput.value);
 
-  async function getShortLink() {
-    const res = await fetch(url);
-    const data = await res.json();
+    loadSpinner.classList.remove('hidden');
 
-    return data.result;
+    const res = await getShortLink(url);
+
+    createShortenLinkEl(res);
+  } catch (e) {
+    console.log(e);
   }
-
-  loadSpinner.classList.remove('hidden');
-
-  getShortLink().then((res) => createShortenLinkEl(res));
 };
 
-DOM.shortenButton.addEventListener('click', shortenLinkHandler);
+const navToggleHandler = () => {
+  DOM.btn.classList.toggle('open');
+  DOM.menu.classList.toggle('block');
+  DOM.menu.classList.toggle('hidden');
+};
 
-function createShortenLinkEl(data) {
+const createShortenLinkEl = (data) => {
   // factsList.insertAdjacentHTML("afterbegin", "<li>chr</li>");
   const { full_short_link, original_link } = data;
   const html = `      
@@ -88,4 +67,14 @@ function createShortenLinkEl(data) {
   </li>`;
 
   DOM.formShorten.insertAdjacentHTML('afterend', html);
-}
+};
+
+const calcBrowserWith = () => {
+  vwidth = window.innerWidth;
+  if (vwidth > '1024') removeBurgerNav();
+};
+
+// Event listeners
+DOM.btn.addEventListener('click', navToggleHandler);
+DOM.shortenButton.addEventListener('click', shortenLinkHandler);
+addEventListener('resize', calcBrowserWith);

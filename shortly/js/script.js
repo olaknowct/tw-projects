@@ -38,8 +38,8 @@ const shortenLinkHandler = async (e) => {
     DOM.shortenButton.setAttribute('disabled', '');
 
     // check and remove error styles
-    formShortenInputClass.contains('placeholder-red', 'border-2', 'border-red')
-      ? formShortenInputClass.remove('placeholder-red', 'border-2', 'border-red')
+    formShortenInputClass.contains('placeholder-red', 'outline-2', 'outline-red', 'outline')
+      ? formShortenInputClass.remove('placeholder-red', 'outline-2', 'outline-red', 'outline')
       : '';
 
     validateLinkInput(link);
@@ -54,10 +54,11 @@ const shortenLinkHandler = async (e) => {
     DOM.shortenButton.removeAttribute('disabled');
   } catch (e) {
     DOM.errMsg.innerHTML = e.message;
+    DOM.errMsg.innerHTML = '';
     DOM.loadSpinner.classList.add('hidden');
     DOM.shortenButton.removeAttribute('disabled');
     DOM.formShortenInput.classList.remove('placeholder-yellow-500');
-    DOM.formShortenInput.classList.add('border-2', 'placeholder-red', 'border-red');
+    DOM.formShortenInput.classList.add('placeholder-red', 'outline-red', 'outline');
     return;
   }
 };

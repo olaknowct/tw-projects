@@ -927,6 +927,11 @@ video {
   background-size: cover;
 }
 
+.bg-clip-text {
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
 .p-10 {
   padding: 2.5rem;
 }
@@ -1106,6 +1111,18 @@ video {
   opacity: 0.75;
 }
 
+.outline {
+  outline-style: solid;
+}
+
+.outline-2 {
+  outline-width: 2px;
+}
+
+.outline-red {
+  outline-color: hsl(0, 87%, 67%);
+}
+
 /* Hamburger Menu */
 
 .hamburger {
@@ -1159,6 +1176,11 @@ video {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-clip-text:hover {
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 
 .hover\:fill-cyan:hover {
@@ -1261,6 +1283,10 @@ video {
     align-items: flex-start;
   }
 
+  .md\:items-center {
+    align-items: center;
+  }
+
   .md\:justify-between {
     justify-content: space-between;
   }
@@ -1287,6 +1313,10 @@ video {
 
   .md\:self-start {
     align-self: flex-start;
+  }
+
+  .md\:self-center {
+    align-self: center;
   }
 
   .md\:pb-0 {

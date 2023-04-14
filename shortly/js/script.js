@@ -31,8 +31,15 @@ const shortenLinkHandler = async (e) => {
   try {
     e.preventDefault();
     const link = DOM.formShortenInput.value;
+    const formShortenInputClass = DOM.formShortenInput.classList;
     DOM.errMsg.innerHTML = '';
     DOM.loadSpinner.classList.remove('hidden');
+
+    // check and remove error styles
+    formShortenInputClass.contains('placeholder-red', 'border-2', 'border-red')
+      ? formShortenInputClass.remove('placeholder-red', 'border-2', 'border-red')
+      : '';
+
     validateLinkInput(link);
 
     const url = createUrlEndpoint(link);
@@ -45,6 +52,8 @@ const shortenLinkHandler = async (e) => {
   } catch (e) {
     DOM.errMsg.innerHTML = e.message;
     DOM.loadSpinner.classList.add('hidden');
+    DOM.formShortenInput.classList.remove('placeholder-yellow-500');
+    DOM.formShortenInput.classList.add('border-2', 'placeholder-red', 'border-red');
     return;
   }
 };

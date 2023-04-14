@@ -703,6 +703,10 @@ video {
   height: 6rem;
 }
 
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+
 .w-180 {
   width: 32rem;
 }

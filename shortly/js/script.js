@@ -71,11 +71,11 @@ const navToggleHandler = () => {
 const createShortenLinkEl = (fullShortLink, orginalLink) => {
   const html = `      
   <li
-    class="flex group flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
+    class="flex  flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
   >
     <a href="">${orginalLink} </a>
     <a href="" class="text-cyan md:ml-auto">${fullShortLink} </a>
-    <button class="group-odd:bg-cyan group-even:bg-darkViolet mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-50 md:mt-0">
+    <button class="bg-cyan  mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-50 md:mt-0">
       Copy
     </button>
   </li>`;

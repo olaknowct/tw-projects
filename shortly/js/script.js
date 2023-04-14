@@ -1,5 +1,5 @@
 'use strict';
-import { createUrlEndpoint, getShortlink, removeBurgerNav } from './helpers.js';
+import { createUrlEndpoint, getShortLink, removeBurgerNav } from './helpers.js';
 import { DOM } from './dom.js';
 
 let vwidth;
@@ -27,22 +27,25 @@ const validateLinkInput = (link) => {
 };
 
 // Handler
-const shortenLinkHandler =  (e) => {
+const shortenLinkHandler = async (e) => {
   try {
     e.preventDefault();
+    const link = DOM.formShortenInput.value;
     DOM.errMsg.innerHTML = '';
+    DOM.loadSpinner.classList.remove('hidden');
+    validateLinkInput(link);
 
-    validateLinkInput(DOM.formShortenInput.value);
-
-    const url = createUrlEndpoint(DOM.formShortenInput.value);
-
-    loadSpinner.classList.remove('hidden');
+    const url = createUrlEndpoint(link);
 
     const res = await getShortLink(url);
 
-    createShortenLinkEl(res);
+    createShortenLinkEl(res.result.full_short_link, link);
+
+    DOM.loadSpinner.classList.add('hidden');
   } catch (e) {
-    console.log(e);
+    DOM.errMsg.innerHTML = e.message;
+    DOM.loadSpinner.classList.add('hidden');
+    return;
   }
 };
 
@@ -52,21 +55,19 @@ const navToggleHandler = () => {
   DOM.menu.classList.toggle('hidden');
 };
 
-const createShortenLinkEl = (data) => {
-  // factsList.insertAdjacentHTML("afterbegin", "<li>chr</li>");
-  const { full_short_link, original_link } = data;
+const createShortenLinkEl = (fullShortLink, orginalLink) => {
   const html = `      
   <li
     class="flex group flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
   >
-    <a href="">${original_link} </a>
-    <a href="" class="text-cyan md:ml-auto">${full_short_link} </a>
+    <a href="">${orginalLink} </a>
+    <a href="" class="text-cyan md:ml-auto">${fullShortLink} </a>
     <button class="group-odd:bg-cyan group-even:bg-darkViolet mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-50 md:mt-0">
       Copy
     </button>
   </li>`;
 
-  DOM.formShorten.insertAdjacentHTML('afterend', html);
+  DOM.listLink.insertAdjacentHTML('afterbegin', html);
 };
 
 const calcBrowserWith = () => {

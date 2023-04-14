@@ -7,4 +7,5 @@ export const DOM = {
   formShortenInput: document.querySelector('.form-shorten__input'),
   formShorten: document.querySelector('.form-shorten'),
   loadSpinner: document.querySelector('.load-spinner'),
+  listLink: document.querySelector('.list-shortenlink'),
 };

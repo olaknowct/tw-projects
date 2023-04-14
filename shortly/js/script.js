@@ -50,6 +50,7 @@ const shortenLinkHandler = async (e) => {
 
     createShortenLinkEl(res.result.full_short_link, link);
 
+    DOM.errMsg.innerHTML = '';
     DOM.loadSpinner.classList.add('hidden');
     DOM.shortenButton.removeAttribute('disabled');
   } catch (e) {
@@ -69,17 +70,38 @@ const navToggleHandler = () => {
   DOM.menu.classList.toggle('hidden');
 };
 
+const copyHandler = (btn) => {
+  btn.classList.remove('bg-cyan');
+  btn.classList.add('bg-darkViolet');
+  btn.innerText = 'Copied';
+  navigator.clipboard.writeText(btn.dataset.link);
+};
+
+const publishCopyHandler = (copyHandler) => {
+  DOM.listLink.addEventListener('click', function (e) {
+    const btn = e.target.closest('.copy-btn');
+
+    if (!btn) return;
+
+    copyHandler(btn);
+  });
+};
+
 const createShortenLinkEl = (fullShortLink, orginalLink) => {
   const html = `      
   <li
-    class="flex  flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
+    class="flex flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
   >
     <a href="">${orginalLink} </a>
-    <a href="" class="text-cyan md:ml-auto">${fullShortLink} </a>
-    <button class="bg-cyan  mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-50 md:mt-0">
+    <a href="" class="text-cyan md:ml-auto short-link">${fullShortLink} </a>
+    <button class="bg-cyan mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-70 md:mt-0 copy-btn" data-link='${fullShortLink}'>
       Copy
     </button>
   </li>`;
+
+  // const copyButton = document.querySelector('.copy-btn');
+
+  // copyButton.addEventListener('click', copyHandler);
 
   DOM.listLink.insertAdjacentHTML('afterbegin', html);
 };
@@ -93,3 +115,4 @@ const calcBrowserWith = () => {
 DOM.btn.addEventListener('click', navToggleHandler);
 DOM.shortenButton.addEventListener('click', shortenLinkHandler);
 addEventListener('resize', calcBrowserWith);
+publishCopyHandler(copyHandler);

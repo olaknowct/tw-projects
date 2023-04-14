@@ -8,4 +8,6 @@ export const DOM = {
   formShorten: document.querySelector('.form-shorten'),
   loadSpinner: document.querySelector('.load-spinner'),
   listLink: document.querySelector('.list-shortenlink'),
+  shortLink: document.querySelector('.short-link'),
+  // copyButton: document.querySelector('.copy-btn'),
 };

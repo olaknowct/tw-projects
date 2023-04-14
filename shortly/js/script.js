@@ -55,6 +55,7 @@ const shortenLinkHandler = async (e) => {
   } catch (e) {
     DOM.errMsg.innerHTML = e.message;
     DOM.loadSpinner.classList.add('hidden');
+    DOM.shortenButton.removeAttribute('disabled');
     DOM.formShortenInput.classList.remove('placeholder-yellow-500');
     DOM.formShortenInput.classList.add('border-2', 'placeholder-red', 'border-red');
     return;

@@ -1,17 +1,13 @@
-const btn = document.getElementById('menu-btn');
-const menu = document.getElementById('menu');
-const errMsg = document.getElementById('err-msg');
-const shortenButton = document.querySelector('.form-shorten__btn');
-const formShortenInput = document.querySelector('.form-shorten__input');
-const formShorten = document.querySelector('.form-shorten');
-const loadSpinner = document.querySelector('.load-spinner');
+'use strict';
+import { createUrlEndpoint } from './helpers.js';
+import { DOM } from './dom.js';
 
 let vwidth;
 
 function navToggle() {
-  btn.classList.toggle('open');
-  menu.classList.toggle('block');
-  menu.classList.toggle('hidden');
+  DOM.btn.classList.toggle('open');
+  DOM.menu.classList.toggle('block');
+  DOM.menu.classList.toggle('hidden');
 }
 
 function calcBrowserWith() {
@@ -20,14 +16,14 @@ function calcBrowserWith() {
 }
 
 const removeBurgerNav = () => {
-  btn.classList.remove('open');
-  menu.classList.remove('block');
-  menu.classList.add('hidden');
+  DOM.btn.classList.remove('open');
+  DOM.menu.classList.remove('block');
+  DOM.menu.classList.add('hidden');
 };
 
 // window.onload = calcBrowserWith;
 window.onresize = calcBrowserWith;
-btn.addEventListener('click', navToggle);
+DOM.btn.addEventListener('click', navToggle);
 
 const isValidHttpUrl = (string) => {
   let url;
@@ -40,14 +36,10 @@ const isValidHttpUrl = (string) => {
   return url.protocol === 'http:' || url.protocol === 'https:';
 };
 
-shortenButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  const link = formShortenInput.value;
-  errMsg.innerHTML = '';
-
+const validateLinkInput = (link) => {
   if (link === '') {
-    errMsg.innerHTML = 'Please enter something';
-    formShortenInput.classList.add('border-red');
+    DOM.errMsg.innerHTML = 'Please enter something';
+    DOM.formShortenInput.classList.add('border-red');
     return;
   }
 
@@ -56,8 +48,16 @@ shortenButton.addEventListener('click', (e) => {
     formShortenInput.classList.add('border-red');
     return;
   }
+};
 
-  const url = `https://api.shrtco.de/v2/shorten?url=${link}/very/long/link.html`;
+const shortenLinkHandler = (e) => {
+  e.preventDefault();
+  const link = DOM.formShortenInput.value;
+  DOM.errMsg.innerHTML = '';
+
+  validateLinkInput(link);
+
+  const url = createUrlEndpoint(link);
 
   async function getShortLink() {
     const res = await fetch(url);
@@ -69,7 +69,9 @@ shortenButton.addEventListener('click', (e) => {
   loadSpinner.classList.remove('hidden');
 
   getShortLink().then((res) => createShortenLinkEl(res));
-});
+};
+
+DOM.shortenButton.addEventListener('click', shortenLinkHandler);
 
 function createShortenLinkEl(data) {
   // factsList.insertAdjacentHTML("afterbegin", "<li>chr</li>");
@@ -85,5 +87,5 @@ function createShortenLinkEl(data) {
     </button>
   </li>`;
 
-  formShorten.insertAdjacentHTML('afterend', html);
+  DOM.formShorten.insertAdjacentHTML('afterend', html);
 }

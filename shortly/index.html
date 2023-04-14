@@ -92,51 +92,80 @@
       <section class="bg-gray-100">
         <div class="relative top-[-70px] mx-auto flex max-w-4xl flex-col gap-6 px-6">
           <form
-            action=""
-            class="flex flex-col gap-3 rounded-lg bg-darkViolet p-10 md:flex-row"
+            class="form-shorten flex flex-col gap-3 rounded-lg bg-darkViolet p-10 md:flex-row"
             style="background-image: url(./images/bg-shorten-desktop.svg)"
           >
-            <input
-              type="url"
-              placeholder="Shorten a link here"
-              class="grow rounded-lg px-4 py-3 placeholder-yellow-500 md:mr-auto"
-            />
-            <button class="rounded-md bg-cyan px-10 py-3 text-white hover:opacity-50">
+            <div class="relative flex grow flex-col md:mr-auto">
+              <input
+                type="url"
+                placeholder="Shorten a link here"
+                class="form-shorten__input grow rounded-lg px-4 py-3 placeholder-yellow-500"
+              />
+              <div id="err-msg" class="absolute left-2 top-14 text-sm italic text-red"></div>
+            </div>
+            <button
+              class="form-shorten__btn flex self-start rounded-md bg-cyan px-10 py-3 text-white hover:-translate-y-1 hover:opacity-50 active:-translate-y-0.5"
+            >
+              <svg
+                class="load-spinner -ml-1 mr-3 hidden h-5 w-5 animate-spin text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
               Shorten it!
             </button>
           </form>
 
-          <div
-            class="flex flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
-          >
-            <a href="">https://frontendmentor.io </a>
-            <a href="" class="text-cyan md:ml-auto">https://rel.ink/k4IKyk </a>
-            <button class="mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-50 md:mt-0">
-              Copy
-            </button>
-          </div>
-
-          <div
-            class="flex flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
-          >
-            <a href="">https://twitter.com/frontendmentor </a>
-            <a href="" class="text-cyan md:ml-auto">https://rel.ink/gxOXp9</a>
-            <button
-              class="mt-2 rounded-lg bg-darkViolet px-6 py-2 text-white hover:opacity-50 md:mt-0"
+          <ul class="flex flex-col gap-6">
+            <li
+              class="group flex flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
             >
-              Copy
-            </button>
-          </div>
+              <a href="">https://frontendmentor.io </a>
+              <a href="" class="text-cyan md:ml-auto">https://rel.ink/k4IKyk </a>
+              <button
+                class="mt-2 rounded-lg px-6 py-2 text-white hover:opacity-50 group-odd:bg-cyan group-even:bg-darkViolet md:mt-0"
+              >
+                Copy
+              </button>
+            </li>
+            <li
+              class="group flex flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
+            >
+              <a href="">https://twitter.com/frontendmentor </a>
+              <a href="" class="text-cyan md:ml-auto">https://rel.ink/gxOXp9</a>
+              <button
+                class="mt-2 rounded-lg px-6 py-2 text-white hover:opacity-50 group-odd:bg-cyan group-even:bg-darkViolet md:mt-0"
+              >
+                Copy
+              </button>
+            </li>
 
-          <div
-            class="flex flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
-          >
-            <a href="">https://linkedin.com/frontend-mentor </a>
-            <a href="" class="text-cyan md:ml-auto">https://rel.ink/gob3X9 </a>
-            <button class="mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-50 md:mt-0">
-              Copy
-            </button>
-          </div>
+            <li
+              class="group flex flex-col items-center rounded-lg bg-white px-6 py-6 font-bold md:flex-row md:justify-between md:gap-4"
+            >
+              <a href="">https://linkedin.com/frontend-mentor </a>
+              <a href="" class="text-cyan md:ml-auto">https://rel.ink/gob3X9 </a>
+              <button
+                class="mt-2 rounded-lg bg-cyan px-6 py-2 text-white hover:opacity-50 group-odd:bg-cyan group-even:bg-darkViolet md:mt-0"
+              >
+                Copy
+              </button>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="bg-gray-100 pb-24">
